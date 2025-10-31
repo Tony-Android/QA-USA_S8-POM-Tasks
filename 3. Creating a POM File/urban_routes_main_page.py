@@ -1,14 +1,13 @@
 from selenium.webdriver.common.by import By
 
-
 # Defining the page class, locators and method in the class
 class UrbanRoutesPage:
     # Locators as class attributes
     FROM_LOCATOR = (By.ID, 'from')
     TO_LOCATOR = (By.ID, 'to')
     CUSTOM_OPTION_LOCATOR = (By.XPATH, '//div[text()="Custom"]')
-    SCOOTER_ICON_LOCATOR = (By.XPATH, '//img[@src="/static/media/scooter.cf9bb57e.svg"]')
-    SCOOTER_TEXT_LOCATOR = (By.XPATH, '//div[@class="results-text"]//div[@class="text"]')
+    BIKE_ICON_LOCATOR = (By.XPATH, '//img[@src="/static/media/bike.fb41c762.svg"]')
+    BIKE_TEXT_LOCATOR = (By.XPATH, '//div[@class="results-text"]//div[@class="text"]')
 
     def __init__(self, driver):
         self.driver = driver  # Initialize the driver
@@ -25,10 +24,10 @@ class UrbanRoutesPage:
         # Click Custom
         self.driver.find_element(*self.CUSTOM_OPTION_LOCATOR).click()
 
-    def click_scooter_icon(self):
-        # Click Scooter Icon
-        self.driver.find_element(*self.SCOOTER_ICON_LOCATOR).click()
+    def click_bike_icon(self):
+        # Click Bike Icon
+        self.driver.find_element(*self.BIKE_ICON_LOCATOR).click()
 
-    def get_scooter_text(self):
-        # Return the "Scooter" text
-        return self.driver.find_element(*self.SCOOTER_TEXT_LOCATOR).text
+    def get_bike_text(self):
+        # Return the "Bike" text
+        return self.driver.find_element(*self.BIKE_TEXT_LOCATOR).text
