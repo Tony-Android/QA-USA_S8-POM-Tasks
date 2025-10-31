@@ -14,7 +14,7 @@ class UrbanRoutesPage:
 
     def enter_from_location(self, from_text):
         # Enter From
-        self.driver.find_element(*self.FROM_LOCATOR).send_keys(from_text)
+        self.driver.find_element(*self.CUSTOM_OPTION_LOCATOR).send_keys(from_text)
 
     def enter_to_location(self, to_text):
         # Enter To
