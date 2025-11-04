@@ -6,7 +6,7 @@ from urban_routes_main_page import UrbanRoutesPage  # Import the POM class
 def test_custom_bike_option():
     driver = webdriver.Chrome()
     # Step 1: Open the app - update the URL after starting the server
-    driver.get('https://cnt-99947b63-2f21-4d6f-a38d-c9b957d94cc5.containerhub.tripleten-services.com/')
+    driver.get('https://cnt-062ca81b-65e0-4dde-9f2b-cfcf3d83ddae.containerhub.tripleten-services.com/')
 
     # Create an instance of the page class
     urban_routes_page = UrbanRoutesPage(driver)
