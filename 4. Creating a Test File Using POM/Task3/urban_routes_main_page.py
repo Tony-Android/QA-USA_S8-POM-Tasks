@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 
-
 # Defining the page class, locators and method in the class
 class UrbanRoutesPage:
     # Locators as class attributes
@@ -10,14 +9,14 @@ class UrbanRoutesPage:
     DRIVE_ICON_LOCATOR = (By.XPATH, '(//img[@src="/static/media/car.8a2b1ff5.svg"])[2]')
     BOOK_BUTTON_LOCATOR = (By.XPATH, '//button[@class="button round"]')
     CAMPING_LOCATOR = (By.XPATH, '//img[@src="/static/media/camping.075c6361.svg"]')
-    ADD_DRIVER_LICENSE_LOCATOR = (By.XPATH, '//div[@class="np-text"]')
+    ADD_DRIVER_LICENSE_LOCATOR = (By.XPATH, '(//div[contains(text(),"Add a driver")])[2]')
     FIRST_NAME_LOCATOR = (By.ID, 'firstName')
     LAST_NAME_LOCATOR = (By.ID, 'lastName')
     DATE_OF_BIRTH_LOCATOR = (By.ID, 'birthDate')
     NUMBER_LOCATOR = (By.ID, 'number')
     ADD_BUTTON_LOCATOR = (By.XPATH, '//button[@class="button full"]')
-    ADD_A_DRIVER_LICENCE_TITLE_LOCATOR = (By.XPATH, '//div[@class="head"]')
-    VERIFICATION_TEXT_LOCATOR = (By.XPATH, '//div[@class="head"]')
+    ADD_A_DRIVER_LICENCE_TITLE_LOCATOR = (By.XPATH, '//div[contains(text(),"Add a driver")]')
+    VERIFICATION_TEXT_LOCATOR = (By.XPATH, '//div[@class="section active"]//div[@style="margin-bottom: 30px;"]')
 
     def __init__(self, driver):
         self.driver = driver  # Initialize the driver
@@ -46,6 +45,10 @@ class UrbanRoutesPage:
         # Click Camping
         self.driver.find_element(*self.CAMPING_LOCATOR).click()
 
+    def get_audi_text(self):
+        # Return the "Audi" text
+        return self.driver.find_element(*self.AUDI_TEXT_LOCATOR).text
+
     def click_add_driver_license(self):
         # Click Add Driver's Licence
         self.driver.find_element(*self.ADD_DRIVER_LICENSE_LOCATOR).click()
@@ -72,7 +75,7 @@ class UrbanRoutesPage:
 
     def click_add_button(self):
         # Click Add Button
-        self.driver.find_element(*self.ADD_A_DRIVER_LICENCE_TITLE_LOCATOR).click()
+        self.driver.find_element(*self.ADD_BUTTON_LOCATOR).click()
 
     def get_verification_text(self):
         # Return the verification text
