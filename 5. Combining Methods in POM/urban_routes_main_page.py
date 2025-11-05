@@ -85,9 +85,20 @@ class UrbanRoutesPage:
 
     # Step to enter "From", "To" and to click "custom_option", "drive_icon", "book button", and "camping"
     def choose_camping_car(self, from_text, to_text):
-        ...
+        self.enter_from_location(from_text)
+        self.enter_to_location(to_text)
+        self.click_custom_option()
+        self.click_drive_icon()
+        self.click_book_button()
+        self.click_camping()
 
     # Step to click "add driver's license"; to enter "first_name", "last_name", "date_of_birth", "number"; and
     # to click "title" and "add button"
     def adding_driver_license(self, first_name, last_name, date_of_birth, number):
-        ...
+        self.click_add_driver_license()
+        self.enter_first_name(first_name)
+        self.enter_last_name(last_name)
+        self.enter_date_of_birth(date_of_birth)
+        self.enter_number(number)
+        self.click_title()
+        self.click_add_button()
